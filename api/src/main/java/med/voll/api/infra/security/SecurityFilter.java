@@ -28,7 +28,7 @@ public class SecurityFilter extends OncePerRequestFilter {
         if (authHeader != null){
 
             var token = authHeader.replace("Bearer ", "");
-
+            System.out.println(token);
             var username = tokenService.getSubject(token); // extract username
             if(username != null){
                 //Token valido
